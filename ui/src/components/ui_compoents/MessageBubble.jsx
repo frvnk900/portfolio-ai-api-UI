@@ -9,7 +9,7 @@ const MessageList = ({ newMessage = null, isStreaming = false, streamContent = '
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const res = await fetch('http://https://portfolio-ai-api-nabe.onrender.com/chat/messages');
+        const res = await fetch('https://portfolio-ai-api-nabe.onrender.com/chat/messages');
         const data = await res.json();
         setMessages(data.messages || []);
       } catch (error) {
