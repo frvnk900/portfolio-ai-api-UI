@@ -1,0 +1,131 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  
+  /* Updated AI and Success gradients for a more professional tone */
+  --ai-gradient: linear-gradient(135deg, #3a506b 0%, #5bc0be 100%);
+  --success-gradient: linear-gradient(135deg, #3a506b 0%, #5bc0be 100%);
+  
+  --user-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  
+  --dark-bg: #0f0f1a;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-accent: #64ffda;
+  
+  --shadow-glow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* messagebubble.css */
+
+.chat-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-bg);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.messages-scroll-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Message bubble wrapper */
+.message-bubble {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  padding: 1rem;
+  border-radius: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-glow);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+.message-bubble.user {
+  align-self: flex-end;
+  background: var(--user-gradient);
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.message-bubble.assistant {
+ 
+  background: var(--ai-gradient);
+  color: #fdfbfb;
+}
+
+/* Streaming style */
+.message-bubble.streaming {
+  opacity: 0.9;
+}
+
+/* Message header: sender name + timestamp (if you want to enable it) */
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+/* Main message content */
+.message-content {
+  position: relative;
+}
+
+.message-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Typing cursor for streamContent */
+.streaming-cursor {
+  display: inline-block;
+  width: 1px;
+  background: currentColor;
+  animation: blink 1s infinite;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Scroll anchor */
+.scroll-anchor {
+  height: 1px;
+}
