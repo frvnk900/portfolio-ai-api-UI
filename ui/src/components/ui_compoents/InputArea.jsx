@@ -25,7 +25,7 @@ const ChatPost = ({ onMessageSent, isStreaming = false }) => {
     setError('');
 
     try {
-      const response = await fetch('https://portfolio-ai-api-frank.onrender.com/chat/post', {
+      const response = await fetch('https://portfolio-ai-api-nabe.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
