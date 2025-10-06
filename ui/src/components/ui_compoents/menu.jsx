@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom'; // Add this import
+import { Link, useLocation } from 'react-router-dom';
 import './styles/menu.css';
 
 const Menu = () => {
@@ -192,12 +192,11 @@ const Menu = () => {
                 className={`menu-item ${isAIPage(item.href) ? 'ai-highlighted' : ''} ${currentPage === item.href ? 'current-page' : ''}`}
               >
                 <Link
-                  to={item.href}  {/* Changed from href to to */}
+                  to={item.href}
                   className="menu-link"
                   onClick={closeMenu}
                   style={{ 
-                    animationDelay: `${index * 0.1}s`,
-                    '--item-color': item.color
+                    animationDelay: `${index * 0.1}s`
                   }}
                   onMouseEnter={() => setActiveHover(item.label)}
                   onMouseLeave={() => setActiveHover(null)}
@@ -214,7 +213,7 @@ const Menu = () => {
                   </div>
                   <div className="menu-link-hover"></div>
                   <div className="menu-item-arrow">→</div>
-                </Link>  {/* Changed from <a> to <Link> */}
+                </Link>
               </li>
             ))}
           </ul>
