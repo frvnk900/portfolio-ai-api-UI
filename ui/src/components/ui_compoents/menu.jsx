@@ -1,24 +1,28 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom'; // Add this import
 import './styles/menu.css';
 
 const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [activeHover, setActiveHover] = useState(null);
-  const [currentPage, setCurrentPage] = useState('/chat');
   const [isMobile, setIsMobile] = useState(false);
   const menuRef = useRef(null);
   const overlayRef = useRef(null);
+  
+  // Use React Router's useLocation hook to get current path
+  const location = useLocation();
+  const currentPage = location.pathname;
 
   // Check if mobile on mount and resize
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -46,11 +50,6 @@ const Menu = () => {
   const handleEscapeKey = (e) => {
     if (e.key === 'Escape') closeMenu();
   };
-
-  useEffect(() => {
-    const pathname = window.location.pathname;
-    setCurrentPage(pathname);
-  }, []);
 
   useEffect(() => {
     if (menuOpen) {
@@ -96,7 +95,7 @@ const Menu = () => {
           ))}
         </div>
       )}
-    
+
       {/* Desktop Fixed Icon */}
       {!isMobile && (
         <div className="desktop-menu-icon">
@@ -185,15 +184,15 @@ const Menu = () => {
             <div className="menu-wave wave-1"></div>
             <div className="menu-wave wave-2"></div>
           </div>
-          
+
           <ul className="menu-list">
             {menuItems.map((item, index) => (
               <li 
                 key={item.label} 
                 className={`menu-item ${isAIPage(item.href) ? 'ai-highlighted' : ''} ${currentPage === item.href ? 'current-page' : ''}`}
               >
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}  {/* Changed from href to to */}
                   className="menu-link"
                   onClick={closeMenu}
                   style={{ 
@@ -215,7 +214,7 @@ const Menu = () => {
                   </div>
                   <div className="menu-link-hover"></div>
                   <div className="menu-item-arrow">→</div>
-                </a>
+                </Link>  {/* Changed from <a> to <Link> */}
               </li>
             ))}
           </ul>
