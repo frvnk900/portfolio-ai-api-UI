@@ -1,10 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 
 import Menu from './components/ui_compoents/menu';
- 
 
 import About from './components/Pages/About';
 import Contact from './components/Pages/Contact';
@@ -24,7 +23,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/chat" element={<ChatBot />} />
- 
         </Routes>
       </div>
     </Router>
