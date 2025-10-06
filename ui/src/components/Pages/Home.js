@@ -203,15 +203,15 @@ const Home = () => {
               Check out my open-source work and community contributions
             </p>
             <div className="social-links">
-              <a href="https://github.com/yourusername" className="social-link">
+              <a href="https://github.com/frvnk900" className="social-link">
                 <FaGithub className="social-icon" />
                 <span>GitHub</span>
               </a>
-              <a href="https://linkedin.com/in/yourprofile" className="social-link">
+              <a href="https://www.linkedin.com/in/frank-kwizigira-22a79537a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_apple" className="social-link">
                 <FaLinkedin className="social-icon" />
                 <span>LinkedIn</span>
               </a>
-              <a href="https://twitter.com/yourprofile" className="social-link">
+              <a href="https://x.com/frvnk900k?t=2tUwvVIxDWoKNTXAg857nA&s=09" className="social-link">
                 <FaTwitter className="social-icon" />
                 <span>Twitter</span>
               </a>
