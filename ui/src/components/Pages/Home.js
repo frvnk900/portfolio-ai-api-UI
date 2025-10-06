@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom'; // Add this import
 import { FaGithub, FaLinkedin, FaTwitter, FaArrowRight, FaCode, FaRobot, FaGlobeAfrica } from 'react-icons/fa';
 import './styles/home.css'; // Make sure this file exists
 
@@ -138,13 +139,13 @@ const Home = () => {
 
           {/* CTA Buttons */}
           <div className="hero-actions">
-            <a href="/projects" className="cta-button primary">
+            <Link to="/projects" className="cta-button primary">
               <span>View My Work</span>
               <FaArrowRight className="button-icon" />
-            </a>
-            <a href="/contact" className="cta-button secondary">
+            </Link>
+            <Link to="/contact" className="cta-button secondary">
               <span>Get In Touch</span>
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -175,13 +176,12 @@ const Home = () => {
           </h3>
           <div className="links-grid">
             {quickLinks.map((link, index) => (
-              <a
+              <Link
                 key={link.title}
-                href={link.href}
+                to={link.href}
                 className="link-card"
                 style={{ 
-                  animationDelay: `${index * 0.15}s`,
-                  '--link-color': link.color
+                  animationDelay: `${index * 0.15}s`
                 }}
               >
                 <div className="link-header">
@@ -191,7 +191,7 @@ const Home = () => {
                 <p className="link-description">{link.description}</p>
                 <div className="link-arrow">→</div>
                 <div className="link-hover-effect"></div>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
@@ -203,15 +203,15 @@ const Home = () => {
               Check out my open-source work and community contributions
             </p>
             <div className="social-links">
-              <a href="https://github.com/frvnk900" className="social-link">
+              <a href="https://github.com/frvnk900" className="social-link" target="_blank" rel="noopener noreferrer">
                 <FaGithub className="social-icon" />
                 <span>GitHub</span>
               </a>
-              <a href="https://www.linkedin.com/in/frank-kwizigira-22a79537a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_apple" className="social-link">
+              <a href="https://www.linkedin.com/in/frank-kwizigira-22a79537a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_apple" className="social-link" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="social-icon" />
                 <span>LinkedIn</span>
               </a>
-              <a href="https://x.com/frvnk900k?t=2tUwvVIxDWoKNTXAg857nA&s=09" className="social-link">
+              <a href="https://x.com/frvnk900k?t=2tUwvVIxDWoKNTXAg857nA&s=09" className="social-link" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="social-icon" />
                 <span>Twitter</span>
               </a>
