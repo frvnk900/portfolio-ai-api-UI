@@ -153,7 +153,9 @@ Whether working independently or collaborating within diverse teams, I prioritiz
               <h4>Ready to Bring Your Ideas to Life?</h4>
               <p>Let's collaborate on your next project</p>
               <button className="cta-button">
-                <span>Start a Project</span>
+              <span>
+<a 
+href="https://frank-kwizigira.onrender.com/#/contact" style={{textDecoration:"none" }}>  Start a Project </a></span>
                 <div className="button-arrow">→</div>
               </button>
             </div>
