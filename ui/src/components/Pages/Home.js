@@ -11,8 +11,7 @@ const Home = () => {
 
   const words = ['JavaScript Developer', 'AI/ML Engineer', 'Python Specialist', 'Problem Solver'];
   const stats = [
-    { number: '50+', label: 'Projects Completed' },
-    { number: '5+', label: 'Years Experience' },
+    { number: '6+', label: 'Projects Completed' },
     { number: '100%', label: 'Client Satisfaction' },
     { number: '∞', label: 'Passion for AI' }
   ];
