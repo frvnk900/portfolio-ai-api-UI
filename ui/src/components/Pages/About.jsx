@@ -82,7 +82,7 @@ Whether working independently or collaborating within diverse teams, I prioritiz
           {/* Quick Stats */}
           <div className="quick-stats">
             <div className="stat-item">
-              <div className="stat-number">50+</div>
+              <div className="stat-number">5+</div>
               <div className="stat-label">Projects Completed</div>
             </div>
  
