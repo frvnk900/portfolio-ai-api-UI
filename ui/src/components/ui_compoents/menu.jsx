@@ -131,7 +131,7 @@ const Menu = () => {
               <span className="chip-dot"></span>
               <span className="chip-dot"></span>
             </div>
-            <span className="chip-text"></span>
+            <span className="chip-text">menu</span>
             <div className="chip-glow"></div>
           </div>
         </div>
