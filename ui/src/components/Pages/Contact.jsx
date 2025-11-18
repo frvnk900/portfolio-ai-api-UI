@@ -11,10 +11,36 @@ import {
 import './styles/contact.css';
 
 const email = 'frvnkkwizigira@gmail.com';
+const subject = 'Hello Frank - Let\'s Connect';
+const body = 'Hi Frank,\n\nI would like to get in touch with you regarding a potential project opportunity.\n\nLooking forward to hearing from you!\n\nBest regards';
 
 const openGmailCompose = () => {
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=Hello%20Frank&body=I%20would%20like%20to%20get%20in%20touch...`;
-  window.open(gmailUrl, '_blank');
+  // Detect if user is on mobile
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  const to = encodeURIComponent(email);
+  const encodedSubject = encodeURIComponent(subject);
+  const encodedBody = encodeURIComponent(body);
+  
+  if (isMobile) {
+    // Mobile: Try Gmail app first, fallback to web
+    const gmailAppUrl = `gmail://co?to=${to}&subject=${encodedSubject}&body=${encodedBody}`;
+    const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${encodedSubject}&body=${encodedBody}`;
+    
+    // Try to open Gmail app
+    const gmailAppLink = document.createElement('a');
+    gmailAppLink.href = gmailAppUrl;
+    gmailAppLink.click();
+    
+    // Fallback to web after a delay if app doesn't open
+    setTimeout(() => {
+      window.open(gmailWebUrl, '_blank');
+    }, 500);
+  } else {
+    // Desktop: Open Gmail web compose
+    const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${encodedSubject}&body=${encodedBody}`;
+    window.open(gmailWebUrl, '_blank');
+  }
 };
 
 const Contact = () => {
